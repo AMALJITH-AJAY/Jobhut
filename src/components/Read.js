@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { deleteUser, showUser } from '../features/userDetailSilce';
 import CustomModal from './CustomModal';
 import { Link } from 'react-router-dom';
+import { Col, Container, Row } from 'react-bootstrap';
 
 function Read() {
 
@@ -27,8 +28,12 @@ function Read() {
 
 
         <div>
-            {showPopup && <CustomModal id={id} showPopup={showPopup} setShowPopup={setShowPopup} />}
-            <h2 className='text-center'>All Data</h2>
+            <Container>
+                <Row>
+                    <Col>
+
+                    {showPopup && <CustomModal id={id} showPopup={showPopup} setShowPopup={setShowPopup} />}
+            <h2 className='text-center text-light'>All Data</h2>
             <input
                 class="form-check-input"
                 name="gender"
@@ -81,21 +86,21 @@ function Read() {
 
                     .map((ele) => (
 
-                        <div key={ele.id} className="card w-50 mx-auto my-2">
+                        <div key={ele.id} className="card m-4">
                             <div className="card-body ">
-                                <h5 className="card-title text-center">{ele.name}</h5>
+                                <h5 className="card-title ">{ele.name}</h5>
                                 <h6 className="card-subtitle mb-2 text-body-secondary">{ele.email}</h6>
                                 <p className="card-text">
                                     {ele.gender}
 
                                 </p>
                                 <a href="#" className="card-link " style={{ textDecoration: "none" }} onClick={() => [setId(ele.id), setShowPopup(true)]}>View</a>
-                                <Link to={`/edit/${ele.id}`} className="card-link"  >
+                                <Link to={`/edit/${ele.id}`} className="card-link"  style={{textDecoration:"none"}} >
                                     Edit
                                 </Link>
                                 <Link
                                     onClick={() => dispatch(deleteUser(ele.id))}
-                                    className="card-link"
+                                    className="card-link" style={{textDecoration:"none"}}
                                 >
                                     Delete
                                 </Link>
@@ -106,6 +111,13 @@ function Read() {
 
 
             </div>
+
+                    </Col>
+                </Row>
+                
+                </Container> 
+                <br /><br /><br /><br />
+          
         </div>
     )
 }

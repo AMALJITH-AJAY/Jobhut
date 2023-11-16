@@ -4,6 +4,7 @@ import Form from 'react-bootstrap/Form';
 import { useDispatch } from 'react-redux';
 import { createUser } from '../features/userDetailSilce';
 import { useNavigate } from 'react-router-dom';
+import { Col, Row } from 'react-bootstrap';
 
 function Create() {
     const [users,setuser]=useState({});
@@ -31,8 +32,11 @@ navigate('/read')
    
   return (
     <div>
-      <h2 className='mt-2 text-center'>Fill The Data</h2>
-<Form className='w-50 mx-auto my-5' onSubmit={handleSubmit}>
+      <Row>
+        <Col sm={12}>
+        
+        <h2 className='ms-4 text-light'>Fill The Data</h2>
+<Form style={{ backgroundColor: 'yellow' }} className='w-50 ms-4 form-control mt-1' onSubmit={handleSubmit}>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Name</Form.Label>
         <Form.Control type="text" name="name" class="form-control" onChange={getUserData}/>
@@ -63,6 +67,9 @@ Female  </label>
         Submit
       </Button>
     </Form>
+        </Col>
+      </Row>
+    
 
 
     </div>

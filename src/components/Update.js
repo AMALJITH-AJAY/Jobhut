@@ -39,7 +39,7 @@ const Update = () => {
   
     return (
       <div>
-        <h2 className="my-2">Edit the data</h2>
+        <h2 className="text-center mx-auto my-5 text-light">Edit the data</h2>
         <form className="w-50 mx-auto my-5" onSubmit={handleUpdate}>
           <div class="mb-3">
             <label class="form-label">Name</label>
@@ -98,6 +98,7 @@ const Update = () => {
             Submit
           </button>
         </form>
+        <br /> <br /> <br />
       </div>
     );
   };

@@ -15,7 +15,7 @@ function Header() {
     <div>
   <Navbar expand="lg" className="bg-body-tertiary">
       <Container fluid>
-        <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
+        <Navbar.Brand href="#">Recuritment </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -23,14 +23,14 @@ function Header() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="#action1">Home</Nav.Link>
-            <Link to={"/"} style={{textDecoration:"none"}}>Create Post</Link>
-            <Link to={"/read"} style={{textDecoration:"none"}}>All Post
+          
+            <Link to={"/"} className='nav-link' >Create Post</Link>
+            <Link to={"/read"} className='nav-link'>All Post
             ({allusers.length})
             </Link>
             
           </Nav>
-          <input className='form-control me-2 w-50' type="search" placeholder='search' aria-label='search'/>
+          
     
         </Navbar.Collapse>
       </Container>
